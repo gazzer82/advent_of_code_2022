@@ -21,7 +21,6 @@ defmodule AdventOfCode2022.Day5 do
     |> map_stacks()
     |> map_moves()
     |> complete_moves_ordered()
-    |> IO.inspect()
     |> (fn {stacks, _} -> stacks end).()
     |> top_of_each_stack()
   end
@@ -150,6 +149,4 @@ defmodule AdventOfCode2022.Day5 do
       "#{code}#{top}"
     end)
   end
-
-
 end
