@@ -130,14 +130,12 @@ defmodule AdventOfCode2022.Day5 do
 
   defp complete_move_ordered(%{qty: qty, to: to}, {stacks, moved}) when qty == 0 do
     to_col = Enum.at(stacks, to)
-    IO.inspect(moved)
     to_col_updated = Enum.reverse(moved) ++ to_col
     udpated_stacks = List.replace_at(stacks, to, to_col_updated)
     {udpated_stacks, []}
   end
 
   defp complete_move_ordered(%{from: from, qty: qty} = move, {stacks, moved}) do
-    IO.inspect(move)
     [box | from_col_updated] = Enum.at(stacks, from)
 
     udpated_stacks =
